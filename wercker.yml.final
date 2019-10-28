@@ -2,7 +2,7 @@
 box:
   id: openjdk:8
   ports:
-    - 8080
+    - 9090
 
 
 #Build our application using Maven, just as we always have
@@ -24,7 +24,7 @@ push-release:
         registry: https://$DOCKER_REGISTRY/v2
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         working-dir: /pipeline/source
-        ports: 8080
+        ports: 9090
         cmd: sh target/bin/start
         
 
